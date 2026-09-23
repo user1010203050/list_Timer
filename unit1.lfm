@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 335
+  Left = 217
   Height = 738
-  Top = 283
+  Top = 110
   Width = 1474
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Form1'
@@ -14,6 +14,7 @@ object Form1: TForm1
   Font.Pitch = fpVariable
   Font.Quality = fqDraft
   LCLVersion = '4.6.0.0'
+  OnCreate = FormCreate
   object ATD1: TButton
     Left = 520
     Height = 55
@@ -50,7 +51,7 @@ object Form1: TForm1
     WordWrap = False
   end
   object SB1: TTrackBar
-    Left = 720
+    Left = 544
     Height = 46
     Top = 520
     Width = 368
@@ -110,9 +111,9 @@ object Form1: TForm1
     MonthNames = 'Long'
   end
   object LN2: TListBox
-    Left = 980
+    Left = 976
     Height = 256
-    Top = 160
+    Top = 150
     Width = 480
     ItemHeight = 0
     TabOrder = 9
@@ -163,42 +164,41 @@ object Form1: TForm1
     ButtonColor = clBlack
     OnColorChanged = CF1ColorChanged
   end
-  object CG1: TCheckGroup
-    Left = 1080
-    Height = 340
-    Top = 410
-    Width = 330
-    AutoFill = True
-    Caption = 'CG1'
-    ChildSizing.LeftRightSpacing = 6
-    ChildSizing.TopBottomSpacing = 6
-    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
-    ChildSizing.EnlargeVertical = crsHomogenousChildResize
-    ChildSizing.ShrinkHorizontal = crsScaleChilds
-    ChildSizing.ShrinkVertical = crsScaleChilds
-    ChildSizing.Layout = cclLeftToRightThenTopToBottom
-    ChildSizing.ControlsPerLine = 1
-    ClientHeight = 292
-    ClientWidth = 326
-    Items.Strings = (
-      'Underline'
-      'Bold'
-      'Italic'
-      'StrikeThrough   '
-    )
+  object CG1: TCheckBox
+    Left = 1040
+    Height = 47
+    Top = 424
+    Width = 204
+    Caption = 'Underline  '
     TabOrder = 13
-    Data = {
-      0400000002020202
-    }
+    OnChange = CG1Change
   end
-  object Ch1: TToggleBox
-    Left = 520
-    Height = 62
-    Top = 510
-    Width = 206
-    Caption = 'Change'
+  object CG2: TCheckBox
+    Left = 1048
+    Height = 47
+    Top = 496
+    Width = 119
+    Caption = 'Bold  '
     TabOrder = 14
-    OnChange = Ch1Change
+    OnChange = CG2Change
+  end
+  object CG3: TCheckBox
+    Left = 1232
+    Height = 47
+    Top = 496
+    Width = 123
+    Caption = 'Italic  '
+    TabOrder = 15
+    OnChange = CG3Change
+  end
+  object CG4: TCheckBox
+    Left = 1064
+    Height = 47
+    Top = 568
+    Width = 303
+    Caption = 'Strike  Through  '
+    TabOrder = 16
+    OnChange = CG4Change
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
